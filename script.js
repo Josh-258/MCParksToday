@@ -13,7 +13,7 @@ const d = new Date();
 
 let currentDay = weekday[d.getDay()];
 
-fetch("/JSON/shows.json")
+fetch("JSON/shows.json")
     .then(function(resp) {
         return resp.json();
     })
@@ -25,7 +25,7 @@ fetch("/JSON/shows.json")
     });
     
 function getTimes() {
-    fetch("/JSON/show_times.json")
+    fetch("JSON/show_times.json")
     .then(function(resp) {
         return resp.json();
     })
