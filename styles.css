@@ -31,7 +31,7 @@ html {
 
 body {
     color: white;
-    font-size: 26px;
+    font-size: 21px;
     padding: 0;
     margin: 0;
 }
@@ -76,6 +76,11 @@ abbr {
   text-decoration: none;
 }
 
+.ShowBox {
+  display: flex;
+  gap: 10%;
+}
+
 @media only screen and (min-width: 1921px) {
 
       .icon img {
@@ -97,7 +102,7 @@ abbr {
       }
 
       body {
-        font-size: 40px;
+        font-size: 32px;
     }
 
     .titleText {

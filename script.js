@@ -10,7 +10,7 @@ let times = [
 const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
 const d = new Date();
-
+// let currentDay = "Monday";
 let currentDay = weekday[d.getDay()];
 
 fetch("JSON/shows.json")
@@ -45,56 +45,61 @@ function loadScene() {
     mergeTimes()
     if(currentPark === "WDW") {
         Icons.src="assets/img/WDWicons.png";
+        document.getElementById("TitleText").textContent = "Walt Disney World"
         let centerText = document.getElementById("CenterText");
         
         centerText.innerHTML = `
         <h2>Featured Entertainment</h2>
         <p id="MKshows"></p>
         <p>
-            <span id="610am"><strong>6:10am:</strong>  <abbr title='${show[3].desc}'>${show[3].showName}</abbr><br /></span>
-            <span id="7am"></span>
-            <span id="11am"></span>
-            <span id="2pm"></span>
-            <span id="4pm"></span>
-            <span id="6pm"></span>
-            <span id="9pm"></span>
-            <span id="12am"><strong>12:00am:</strong>  <abbr title='${show[3].desc}'>${show[3].showName}</abbr></span>
-
+            <div class="ShowBox">
+                <div class="ShowBox1">
+                    <span id="610am"><strong>6:10am:</strong><br /><abbr title='${show[3].desc}'>${show[3].showName}</abbr><br /></span>
+                    <span id="7am"></span>
+                    <span id="11am"></span>
+                    <span id="2pm"></span>
+                </div>
+                <div class="ShowBox2">
+                    <span id="4pm"></span>
+                    <span id="6pm"></span>
+                    <span id="9pm"></span>
+                    <span id="12am"><strong>12:00am:</strong><br /><abbr title='${show[3].desc}'>${show[3].showName}</abbr></span>
+                </div>
+            </div>
         </p>
         `
         let isShow = false;
 
-        document.getElementById("TitleText").textContent = "Walt Disney World"
         let mkShows = document.getElementById("MKshows");
         for(let i = 0; i < times.length; i++) {
             if(times[i].weekday == currentDay) {
                 if(times[i].park == 1 || times[i].park == 2 ) {
                     if(times[i].timeslot === "SevenOClock") {
-                        document.getElementById("7am").innerHTML += `<strong>7:00am:</strong>  <abbr title='${times[i].desc}'>${times[i].showName}</abbr><br />`
+                        document.getElementById("7am").innerHTML = `<strong>7:00am:</strong><br /><abbr title='${times[i].desc}'>${times[i].showName}</abbr><br />`
                         isShow = true;
                     }   
                     else if(times[i].timeslot === "ElevenOClock") {
-                        document.getElementById("11am").innerHTML += `<strong>11:00am:</strong>  <abbr title='${times[i].desc}'>${times[i].showName}</abbr><br />` 
+                        document.getElementById("11am").innerHTML = `<strong>11:00am:</strong><br /><abbr title='${times[i].desc}'>${times[i].showName}</abbr><br />` 
                         isShow = true;
                     }  
                     else if(times[i].timeslot === "TwoOClock") {
-                        document.getElementById("2pm").innerHTML += `<strong>2:00pm:</strong>  <abbr title='${times[i].desc}'>${times[i].showName}</abbr><br />` 
+                        document.getElementById("2pm").innerHTML = `<strong>2:00pm:</strong><br /><abbr title='${times[i].desc}'>${times[i].showName}</abbr><br />` 
                         isShow = true;
                     }  
                     else if(times[i].timeslot === "FourOClock") {
-                        document.getElementById("4pm").innerHTML += `<strong>4:00pm:</strong>  <abbr title='${times[i].desc}'>${times[i].showName}</abbr><br />` 
+                        document.getElementById("4pm").innerHTML = `<strong>4:00pm:</strong><br /><abbr title='${times[i].desc}'>${times[i].showName}</abbr><br />` 
                         isShow = true;
                     }  
                     else if(times[i].timeslot === "SixOClock") {
-                        document.getElementById("6pm").innerHTML += `<strong>6:00pm:</strong>  <abbr title='${times[i].desc}'>${times[i].showName}</abbr><br />` 
+                        document.getElementById("6pm").innerHTML = `<strong>6:00pm:</strong><br /><abbr title='${times[i].desc}'>${times[i].showName}</abbr><br />` 
                         isShow = true;
                     }  
                     else if(times[i].timeslot === "NineOClock") {
-                        document.getElementById("9pm").innerHTML += `<strong>9:00pm:</strong>  <abbr title='${times[i].desc}'>${times[i].showName}</abbr><br />` 
+                        document.getElementById("9pm").innerHTML = `<strong>9:00pm:</strong><br /><abbr title='${times[i].desc}'>${times[i].showName}</abbr><br />` 
                         isShow = true;
                     }  
                     else if(times[i].timeslot === "Midnight") {
-                        document.getElementById("12am").innerHTML += `<strong>12:00am:</strong>  <abbr title='${times[i].desc}'>${times[i].showName}</abbr><br />` 
+                        document.getElementById("12am").innerHTML = `<strong>12:00am:</strong><br /><abbr title='${times[i].desc}'>${times[i].showName}</abbr><br />` 
                         isShow = true;
                     }  
                 }
@@ -110,6 +115,7 @@ function loadScene() {
 
     if(currentPark === "WDW2") {
         Icons.src="assets/img/WDWicons.png";
+        document.getElementById("TitleText").textContent = "Walt Disney World"
         document.getElementById("CenterText").innerHTML = `
         <h2>Featured Entertainment</h2>
         <p id="MKshows"></p>
@@ -206,13 +212,19 @@ function loadScene() {
         <h2>Featured Entertainment</h2>
         <p id="DLshows"></p>
         <p>
-            <span id="7am"></span>
-            <span id="11am"></span>
-            <span id="2pm"></span>
-            <span id="4pm"></span>
-            <span id="6pm"></span>
-            <span id="9pm"></span>
-            <span id="12am"></span>
+            <div class="ShowBox">
+                <div class="ShowBox1">
+                    <span id="7am"></span>
+                    <span id="11am"></span>
+                    <span id="2pm"></span>
+                    <span id="4pm"></span>
+                </div>
+                <div class="ShowBox2">
+                    <span id="6pm"></span>
+                    <span id="9pm"></span>
+                    <span id="12am"></span>
+                </div>
+            </div>
         </p>
         `
         let isShow = false;
@@ -223,31 +235,31 @@ function loadScene() {
             if(times[i].weekday == currentDay) {
                 if(times[i].park == 8) {
                     if(times[i].timeslot === "SevenOClock") {
-                        document.getElementById("7am").innerHTML += `<strong>7:00am:</strong>  <abbr title='${times[i].desc}'>${times[i].showName}</abbr><br />`
+                        document.getElementById("7am").innerHTML = `<strong>7:00am:</strong><br /><abbr title='${times[i].desc}'>${times[i].showName}</abbr><br />`
                         isShow = true;
                     }   
                     else if(times[i].timeslot === "ElevenOClock") {
-                        document.getElementById("11am").innerHTML += `<strong>11:00am:</strong>  <abbr title='${times[i].desc}'>${times[i].showName}</abbr><br />` 
+                        document.getElementById("11am").innerHTML = `<strong>11:00am:</strong><br /><abbr title='${times[i].desc}'>${times[i].showName}</abbr><br />` 
                         isShow = true;
                     }  
                     else if(times[i].timeslot === "TwoOClock") {
-                        document.getElementById("2pm").innerHTML += `<strong>2:00pm:</strong>  <abbr title='${times[i].desc}'>${times[i].showName}</abbr><br />` 
+                        document.getElementById("2pm").innerHTML = `<strong>2:00pm:</strong><br /><abbr title='${times[i].desc}'>${times[i].showName}</abbr><br />` 
                         isShow = true;
                     }  
                     else if(times[i].timeslot === "FourOClock") {
-                        document.getElementById("4pm").innerHTML += `<strong>4:00pm:</strong>  <abbr title='${times[i].desc}'>${times[i].showName}</abbr><br />` 
+                        document.getElementById("4pm").innerHTML = `<strong>4:00pm:</strong><br /><abbr title='${times[i].desc}'>${times[i].showName}</abbr><br />` 
                         isShow = true;
                     }  
                     else if(times[i].timeslot === "SixOClock") {
-                        document.getElementById("6pm").innerHTML += `<strong>6:00pm:</strong>  <abbr title='${times[i].desc}'>${times[i].showName}</abbr><br />` 
+                        document.getElementById("6pm").innerHTML = `<strong>6:00pm:</strong><br /><abbr title='${times[i].desc}'>${times[i].showName}</abbr><br />` 
                         isShow = true;
                     }  
                     else if(times[i].timeslot === "NineOClock") {
-                        document.getElementById("9pm").innerHTML += `<strong>9:00pm:</strong>  <abbr title='${times[i].desc}'>${times[i].showName}</abbr><br />` 
+                        document.getElementById("9pm").innerHTML = `<strong>9:00pm:</strong><br /><abbr title='${times[i].desc}'>${times[i].showName}</abbr><br />` 
                         isShow = true;
                     }  
                     else if(times[i].timeslot === "Midnight") {
-                        document.getElementById("12am").innerHTML += `<strong>12:00am:</strong>  <abbr title='${times[i].desc}'>${times[i].showName}</abbr><br />` 
+                        document.getElementById("12am").innerHTML = `<strong>12:00am:</strong><br /><abbr title='${times[i].desc}'>${times[i].showName}</abbr><br />` 
                         isShow = true;
                     }  
                 }
@@ -273,7 +285,7 @@ function mergeTimes() {
 }
 
 // Define the array of parks
-const parks = ["WDW", "WDW2", "DL"];
+const parks = ["WDW2", "WDW", "DL"];
 
 // Initialize the index of the current park
 let currentParkIndex = 0;
