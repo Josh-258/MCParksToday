@@ -199,7 +199,7 @@ function loadScene() {
     }
 
     if(currentPark === "DL") {
-        Icons.src=" ";
+        Icons.src="assets/img/DLicons.png";
         let centerText = document.getElementById("CenterText");
         
         centerText.innerHTML = `
@@ -273,7 +273,7 @@ function mergeTimes() {
 }
 
 // Define the array of parks
-const parks = [ "REG", "WDW", "WDW2", "DL", "TDL", "DLP", "UOR", "DS"];
+const parks = ["WDW", "WDW2", "DL"];
 
 // Initialize the index of the current park
 let currentParkIndex = 0;
