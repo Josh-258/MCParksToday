@@ -1,0 +1,100 @@
+html { 
+    background: url(assets/img/background.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: sans-serif;
+  }
+
+  .icon img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 919px;
+    z-index: -1;
+  }
+
+  .sse {
+    z-index: 9;
+  }
+
+  .sidebar img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 919px;
+    animation-name: castle;
+    animation-duration: 4s;
+    z-index: -1;
+  }
+
+body {
+    color: white;
+    font-size: 32px;
+    padding: 0;
+    margin: 0;
+}
+
+.text {
+    width: 50%;
+    height: 50%;
+    margin-top: 11%;
+    margin-left: 40%;
+    z-index: 10;
+}
+
+.titleText {
+  font-weight: bold;
+  font-size: 72px;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+
+.logo{
+  width: 133px;
+  position: absolute;
+  top: 20px;
+  left: 60px;
+}
+
+@media only screen and (min-width: 1921px) {
+
+      .icon img {
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        height: 1279px;
+        animation-name: castle;
+        animation-duration: 4s;
+      }
+
+      .sidebar img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 1279px;
+        animation-name: castle;
+        animation-duration: 4s;
+      }
+
+      body {
+        font-size: 48px;
+    }
+
+    .titleText {
+      font-weight: bold;
+      font-size: 108px;
+      position: absolute;
+      top: 50px;
+      left: 50px;
+    }
+
+    .logo {
+      width: 200px;
+      position: absolute;
+      top: 20px;
+      left: 60px;
+    }
+}
